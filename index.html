@@ -288,6 +288,32 @@ dialog::backdrop{background:rgba(17,31,52,.56);backdrop-filter:blur(3px)}
   .shell:has(.start.is-visible) .text-button{font-size:13px}
 }
 
+/* ---------- Schmale und zusammengeschobene Querfenster ---------- */
+@media (min-width:700px) and (orientation:landscape){
+  .start .language-grid{
+    grid-template-rows:none;
+    grid-auto-rows:minmax(72px,1fr);
+  }
+  .start .language-button{overflow:hidden}
+  .start .lang-copy{width:100%}
+  .start .lang-name,.start .lang-sub{overflow-wrap:anywhere;hyphens:auto}
+}
+@media (min-width:700px) and (max-width:899px) and (orientation:landscape){
+  .start .language-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (min-width:900px) and (max-width:1179px) and (orientation:landscape){
+  .start .language-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media (min-width:1180px) and (max-width:1679px) and (orientation:landscape){
+  .start .language-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+@media (min-width:1680px) and (orientation:landscape){
+  .start .language-grid{
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    grid-template-rows:repeat(4,minmax(72px,1fr));
+  }
+}
+
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto !important;transition:none !important}}
 </style>
 </head>
